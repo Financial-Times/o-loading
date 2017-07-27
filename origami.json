@@ -7,8 +7,7 @@
 	"supportStatus": "active",
 	"demosDefaults": {
 		"sass": "demos/src/demo.scss",
-		"documentClasses": "o-techdocs-content",
-		"dependencies": ["o-techdocs@^4.0.0"]
+		"documentClasses": "o-techdocs-content"
 	},
 	"ci": {
 		"circle": "https://circleci.com/api/v1/project/Financial-Times/o-loading"
