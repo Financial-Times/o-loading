@@ -21,31 +21,16 @@
 	}
 }
 
-/// Base styles for a loading indicator
-@mixin oLoading() {
-
-	// the keyframes must be defined _before_ first use
-	@at-root {
-		@include _oLoadingAnimationKeyframes();
-	}
-
-	// HACK: creates a new selector to output the rules _after_ keyframes
-	& {
-		display: inline-block;
-		border-radius: 50%;
-		animation: o-loading-spinner 1s infinite linear;
-	}
-}
-
 /// Color variation for a loading indicator
 ///
 /// @param {String|Color} $color
-@mixin oLoadingColor($color) {
+/// @access private
+@mixin _oLoadingColor($color) {
 	@if type-of($color) == 'string' {
 		$color: map-get($o-loading-colors, $color);
 
 		@if not $color {
-			@warn "Color not found for o-loading";
+			@warn "Color: '#{$color}' not found for o-loading";
 		}
 	}
 
@@ -56,12 +41,13 @@
 /// Size variation for a loading indicator
 ///
 /// @param {String|Number} $size
-@mixin oLoadingSize($size) {
+/// @access private
+@mixin _oLoadingSize($size) {
 	@if type-of($size) == 'string' {
 		$size: map-get($o-loading-sizes, $size);
 
 		@if not $size {
-			@warn "Size not found for o-loading";
+			@warn "Size: '#{$size}' not found for o-loading";
 		}
 	}
 

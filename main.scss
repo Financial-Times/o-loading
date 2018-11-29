@@ -5,23 +5,42 @@
 @import 'src/scss/variables';
 @import 'src/scss/mixins';
 
-@if $o-loading-is-silent == false {
+@mixin oLoading($opts: (
+	'colors': ('light', 'dark'),
+	'sizes': ('small', 'medium', 'large')
+)) {
+	$colors: map-get($opts, 'colors');
+	$sizes: map-get($opts, 'sizes');
 
 	.o-loading {
-		@include oLoading();
-	}
+		@at-root {
+			@include _oLoadingAnimationKeyframes();
+		}
 
-	@each $key, $value in $o-loading-colors {
-		.o-loading--#{$key} {
-			@include oLoadingColor($value);
+		// HACK: creates a new selector to output the rules _after_ keyframes
+		& {
+			display: inline-block;
+			border-radius: 50%;
+			animation: o-loading-spinner 1s infinite linear;
 		}
 	}
 
-	@each $key, $value in $o-loading-sizes {
-		.o-loading--#{$key} {
-			@include oLoadingSize($value);
+	@each $color in $colors {
+		.o-loading--#{$color} {
+			@include _oLoadingColor(map-get($o-loading-colors, $color));
 		}
 	}
+
+	@each $size in $sizes {
+		.o-loading--#{$size} {
+			@include _oLoadingSize(map-get($o-loading-sizes, $size));
+		}
+	}
+}
+
+@if $o-loading-is-silent == false {
+
+	@include oLoading();
 
 	$o-loading-is-silent: true !global;
 }
