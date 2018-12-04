@@ -40,6 +40,19 @@ You can also be more selective about which themes or sizes of the loading indica
 ));
 ```
 
+If you need to build a loading spinner into a component, for example, you can use the following mixin:
+
+```scss
+@import 'o-loading/main';
+
+.my-loading-spinner {
+	@include	oLoadingContent($opts: (
+		'color': 'light',
+		'size': 'small'
+	));
+}
+```
+
 ## Migration
 
 State | Major Version | Last Minor Release | Migration guide |

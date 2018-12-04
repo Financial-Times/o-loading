@@ -12,17 +12,12 @@
 	$colors: map-get($opts, 'colors');
 	$sizes: map-get($opts, 'sizes');
 
-	.o-loading {
-		@at-root {
-			@include _oLoadingAnimationKeyframes();
-		}
+	@include _oLoadingAnimationKeyframes();
 
-		// HACK: creates a new selector to output the rules _after_ keyframes
-		& {
-			display: inline-block;
-			border-radius: 50%;
-			animation: o-loading-spinner 1s infinite linear;
-		}
+	.o-loading {
+		display: inline-block;
+		border-radius: 50%;
+		animation: o-loading-spinner 1s infinite linear;
 	}
 
 	@each $color in $colors {

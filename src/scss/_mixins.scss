@@ -54,3 +54,25 @@
 	width: $size;
 	height: $size;
 }
+
+@mixin oLoadingContent($opts: (
+	'color': null,
+	'size': null
+)) {
+	$color: map-get($opts, 'color');
+	$size: map-get($opts, 'size');
+
+	@include _oLoadingAnimationKeyframes();
+
+	display: inline-block;
+	border-radius: 50%;
+	animation: o-loading-spinner 1s infinite linear;
+
+	@if $color {
+		@include _oLoadingColor($color);
+	}
+
+	@if $size {
+		@include _oLoadingSize($size);
+	}
+}
