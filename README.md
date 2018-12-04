@@ -46,7 +46,7 @@ If you need to build a loading spinner into a component, for example, you can us
 @import 'o-loading/main';
 
 .my-loading-spinner {
-	@include	oLoadingContent($opts: (
+	@include oLoadingContent($opts: (
 		'color': 'light',
 		'size': 'small'
 	));
