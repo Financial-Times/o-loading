@@ -38,6 +38,8 @@ You can also be more selective about which themes or sizes of the loading indica
 	'colors': ('light'),
 	'sizes': ('medium', 'large')
 ));
+
+// outputs a large light spinner and a medium light spinner
 ```
 
 If you need to build a loading spinner into a component, for example, you can use the following mixin:
