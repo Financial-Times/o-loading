@@ -12,8 +12,12 @@
 	$colors: map-get($opts, 'colors');
 	$sizes: map-get($opts, 'sizes');
 
+	@include _oLoadingAnimationKeyframes();
+
 	.o-loading {
-		@include _oLoadingAnimationKeyframes();
+		display: inline-block;
+		border-radius: 50%;
+		animation: o-loading-spinner 1s infinite linear;
 	}
 
 	@each $color in $colors {

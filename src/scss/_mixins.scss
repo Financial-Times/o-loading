@@ -7,7 +7,6 @@
 ///
 /// @private
 @mixin _oLoadingAnimationKeyframes {
-	// the keyframes must be defined _before_ first use
 	@at-root {
 		@if not $o-loading-animation-keyframes {
 			@keyframes o-loading-spinner {
@@ -21,13 +20,6 @@
 
 			$o-loading-animation-keyframes: true !global;
 		}
-	}
-
-	// HACK: creates a new selector to output the rules _after_ keyframes
-	& {
-		display: inline-block;
-		border-radius: 50%;
-		animation: o-loading-spinner 1s infinite linear;
 	}
 }
 
@@ -72,7 +64,16 @@
 	$color: map-get($opts, 'color');
 	$size: map-get($opts, 'size');
 
-	@include _oLoadingAnimationKeyframes();
+	@at-root {
+		@include _oLoadingAnimationKeyframes();
+	}
+
+	// HACK: creates a new selector to output the rules _after_ keyframes
+	& {
+		display: inline-block;
+		border-radius: 50%;
+		animation: o-loading-spinner 1s infinite linear;
+	}
 
 	@if $color {
 		@include _oLoadingColor($color);
