@@ -5,6 +5,10 @@
 @import 'src/scss/variables';
 @import 'src/scss/mixins';
 
+
+/// @param {Map} $opts ['colors': ('light', 'dark'), 'sizes': ('small', 'medium', 'large')
+/// @access public
+// Outputs all loading styles
 @mixin oLoading($opts: (
 	'colors': ('light', 'dark'),
 	'sizes': ('small', 'medium', 'large')

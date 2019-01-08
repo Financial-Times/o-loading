@@ -57,6 +57,9 @@
 	height: $size;
 }
 
+/// @param {Map} $opts ['color': ('light', 'dark'), 'size': ('small', 'medium', 'large')
+/// @access public
+// Outputs loading styles for a custom class
 @mixin oLoadingContent($opts: (
 	'color': null,
 	'size': null
