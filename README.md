@@ -29,6 +29,7 @@ The `$opts` map accepts two lists:
 - dark
 
 And 'sizes':
+- mini
 - small
 - medium
 - large

@@ -30,6 +30,8 @@ If you can't use `o-loading` classes, you can add styles to a specific element b
 }
 ```
 
+There is also a new size available in `o-loading`, namely `mini`.
+
 ### Migrating from 1.X.X to 2.X.X
 
 V1 -> V2 introduces the new majors of o-colors. Updating to this new version will mean updating any other components that you have which are using o-colors. There are no other breaking changes in this release.

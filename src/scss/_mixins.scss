@@ -37,7 +37,8 @@
 
 	}
 
-	border: 4px solid rgba($color, 0.25);
+	border-style: solid;
+	border-color: rgba($color, 0.25);
 	border-top-color: $color;
 }
 
@@ -56,9 +57,10 @@
 
 	width: $size;
 	height: $size;
+	border-width: if($size == 10px, 2px, 4px);
 }
 
-/// @param {Map} $opts ['theme': ('light', 'dark'), 'size': ('small', 'medium', 'large')
+/// @param {Map} $opts ['theme': ('light', 'dark'), 'size': ('mini', 'small', 'medium', 'large')
 /// @access public
 // Outputs loading styles for a custom class
 @mixin oLoadingContent($opts: (

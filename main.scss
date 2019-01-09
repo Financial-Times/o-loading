@@ -6,12 +6,12 @@
 @import 'src/scss/mixins';
 
 
-/// @param {Map} $opts ['themes': ('light', 'dark'), 'sizes': ('small', 'medium', 'large')
+/// @param {Map} $opts ['themes': ('light', 'dark'), 'sizes': ('mini', 'small', 'medium', 'large')
 /// @access public
 // Outputs all loading styles
 @mixin oLoading($opts: (
 	'themes': ('light', 'dark'),
-	'sizes': ('small', 'medium', 'large')
+	'sizes': ('mini', 'small', 'medium', 'large')
 )) {
 	$themes: map-get($opts, 'themes');
 	$sizes: map-get($opts, 'sizes');
