@@ -3,9 +3,8 @@
 /// @link http://registry.origami.ft.com/components/o-loading
 ////
 
-/// Output the keyframe animation definition
-///
-/// @private
+/// @access private
+/// Outputs the keyframe animation definition
 @mixin _oLoadingAnimationKeyframes {
 	@at-root {
 		@if not $o-loading-animation-keyframes {
@@ -23,6 +22,13 @@
 	}
 }
 
+/// @access private
+/// Output base styles for a loading spinner
+@mixin _oLoadingBase() {
+	display: inline-block;
+	border-radius: 50%;
+	animation: o-loading-spinner 1s infinite linear;
+}
 /// Color variation for a loading indicator
 ///
 /// @param {String|Color} $color
@@ -75,9 +81,7 @@
 
 	// HACK: creates a new selector to output the rules _after_ keyframes
 	& {
-		display: inline-block;
-		border-radius: 50%;
-		animation: o-loading-spinner 1s infinite linear;
+		@include _oLoadingBase();
 	}
 
 	@if $theme {

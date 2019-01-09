@@ -19,9 +19,7 @@
 	@include _oLoadingAnimationKeyframes();
 
 	.o-loading {
-		display: inline-block;
-		border-radius: 50%;
-		animation: o-loading-spinner 1s infinite linear;
+		@include _oLoadingBase();
 	}
 
 	@each $theme in $themes {
