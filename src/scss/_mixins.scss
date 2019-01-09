@@ -34,7 +34,6 @@
 		@if not $color {
 			@warn "Color: '#{$color}' not found for o-loading";
 		}
-
 	}
 
 	border-style: solid;
@@ -44,20 +43,20 @@
 
 /// Size variation for a loading indicator
 ///
-/// @param {String|Number} $size
+/// @param {String|Number} $name
 /// @access private
-@mixin _oLoadingSize($size) {
-	@if type-of($size) == 'string' {
-		$size: map-get($o-loading-sizes, $size);
+@mixin _oLoadingSize($name) {
+	@if type-of($name) == 'string' {
+		$name: map-get($o-loading-sizes, $name);
 
-		@if not $size {
-			@warn "Size: '#{$size}' not found for o-loading";
+		@if not $name {
+			@warn "Size: '#{$name}' not found for o-loading";
 		}
 	}
 
-	width: $size;
-	height: $size;
-	border-width: if($size == 10px, 2px, 4px);
+	width: map-get($name, 'size');
+	height: map-get($name, 'size');
+	border-width: map-get($name, 'border');
 }
 
 /// @param {Map} $opts ['theme': ('light', 'dark'), 'size': ('mini', 'small', 'medium', 'large')
