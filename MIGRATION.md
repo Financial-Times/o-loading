@@ -7,7 +7,7 @@ V3 changes the internal structure of `o-loading`.
 These mixins have been privatised and are no longer meant to be used within a product.
 ```diff
 - oLoadingColor
-+ _oLoadingColor
++ _oLoadingTheme
 - oLoadingSize
 + _oLoadingSize
 ```
@@ -15,16 +15,16 @@ These mixins have been privatised and are no longer meant to be used within a pr
 In order to output styles, the available mixin is now:
 ```scss
 @include oLoading($opts: (
-	'colors': ('dark'),
+	'themes': ('dark'),
 	'sizes': ('small')
 ))
 ```
 
-In order to add styles to a specific element, you can use:
+If you can't use `o-loading` classes, you can add styles to a specific element by using `oLoadingContent`:
 ```scss
-.small-dark-loading {
+.my-small-dark-loading-spinner {
 	@include oLoadingContent($opts: (
-		'color': ('dark'),
+		'theme': ('dark'),
 		'size': ('small')
 	));
 }

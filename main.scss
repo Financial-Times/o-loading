@@ -6,14 +6,14 @@
 @import 'src/scss/mixins';
 
 
-/// @param {Map} $opts ['colors': ('light', 'dark'), 'sizes': ('small', 'medium', 'large')
+/// @param {Map} $opts ['themes': ('light', 'dark'), 'sizes': ('small', 'medium', 'large')
 /// @access public
 // Outputs all loading styles
 @mixin oLoading($opts: (
-	'colors': ('light', 'dark'),
+	'themes': ('light', 'dark'),
 	'sizes': ('small', 'medium', 'large')
 )) {
-	$colors: map-get($opts, 'colors');
+	$themes: map-get($opts, 'themes');
 	$sizes: map-get($opts, 'sizes');
 
 	@include _oLoadingAnimationKeyframes();
@@ -24,9 +24,9 @@
 		animation: o-loading-spinner 1s infinite linear;
 	}
 
-	@each $color in $colors {
-		.o-loading--#{$color} {
-			@include _oLoadingColor(map-get($o-loading-colors, $color));
+	@each $theme in $themes {
+		.o-loading--#{$theme} {
+			@include _oLoadingColor(map-get($o-loading-themes, $theme));
 		}
 	}
 

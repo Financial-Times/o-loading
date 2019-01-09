@@ -14,10 +14,10 @@ $o-loading-is-silent: true !default;
 /// @type Boolean
 $o-loading-animation-keyframes: false !default;
 
-/// Predefined color themes
+/// Predefined themes
 ///
 /// @type Map
-$o-loading-colors: (
+$o-loading-themes: (
 	'light': _oLoadingGet('default-color', $from: 'light'),
 	'dark': _oLoadingGet('default-color', $from: 'dark')
 );

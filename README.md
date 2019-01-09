@@ -8,17 +8,6 @@ This is an [Origami](http://origami.ft.com/) component that provides a visual lo
 - [Contact](#contact)
 - [Licence](#licence)
 
-Loading indicators come in the following themes:
-
-- light
-- dark
-
-And the following sizes:
-
-- small
-- medium
-- large
-
 ## Markup
 In order to display a loading indicator in your product, you will need to supply the theme and the size modifiers in your markup, e.g.:
 ```html
@@ -29,13 +18,26 @@ In order to display a loading indicator in your product, you will need to supply
 In order to output all of the variations in theme and size of `o-loading`, you'll need to include the following:
 ```scss
 @import 'o-loading/main';
+
 @include oLoading();
 ```
-You can also be more selective about which themes or sizes of the loading indicator you wish to output, by using an `$opts` map:
+You can also be more selective about which themes or sizes of the loading indicator you wish to output, by using a map.
+The `$opts` map accepts two lists:
+
+'themes':
+- light
+- dark
+
+And 'sizes':
+- small
+- medium
+- large
+
 ```scss
 @import 'o-loading/main';
+
 @include oLoading($opts: (
-	'colors': ('light'),
+	'themes': ('light'),
 	'sizes': ('medium', 'large')
 ));
 

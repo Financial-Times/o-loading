@@ -29,11 +29,12 @@
 /// @access private
 @mixin _oLoadingColor($color) {
 	@if type-of($color) == 'string' {
-		$color: map-get($o-loading-colors, $color);
+		$color: map-get($o-loading-themes, $color);
 
 		@if not $color {
 			@warn "Color: '#{$color}' not found for o-loading";
 		}
+
 	}
 
 	border: 4px solid rgba($color, 0.25);
@@ -57,14 +58,14 @@
 	height: $size;
 }
 
-/// @param {Map} $opts ['color': ('light', 'dark'), 'size': ('small', 'medium', 'large')
+/// @param {Map} $opts ['theme': ('light', 'dark'), 'size': ('small', 'medium', 'large')
 /// @access public
 // Outputs loading styles for a custom class
 @mixin oLoadingContent($opts: (
-	'color': null,
+	'theme': null,
 	'size': null
 )) {
-	$color: map-get($opts, 'color');
+	$theme: map-get($opts, 'theme');
 	$size: map-get($opts, 'size');
 
 	@at-root {
@@ -78,8 +79,8 @@
 		animation: o-loading-spinner 1s infinite linear;
 	}
 
-	@if $color {
-		@include _oLoadingColor($color);
+	@if $theme {
+		@include _oLoadingColor($theme);
 	}
 
 	@if $size {
