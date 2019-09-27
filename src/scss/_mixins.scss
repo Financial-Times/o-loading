@@ -7,7 +7,7 @@
 /// Outputs the keyframe animation definition
 @mixin _oLoadingAnimationKeyframes {
 	@at-root {
-		@if not $o-loading-animation-keyframes {
+		@if not $_o-loading-animation-keyframes {
 			@keyframes o-loading-spinner {
 				0% {
 					transform: rotate(0deg);
@@ -17,7 +17,7 @@
 				}
 			}
 
-			$o-loading-animation-keyframes: true !global;
+			$_o-loading-animation-keyframes: true !global;
 		}
 	}
 }
@@ -29,17 +29,14 @@
 	border-radius: 50%;
 	animation: o-loading-spinner 1s infinite linear;
 }
-/// Color variation for a loading indicator
+/// Styles for a color variation for a loading indicator.
 ///
-/// @param {String|Color} $color
+/// @param {String} $theme
 /// @access private
-@mixin _oLoadingColor($color) {
-	@if type-of($color) == 'string' {
-		$color: map-get($o-loading-themes, $color);
-
-		@if not $color {
-			@warn "Color: '#{$color}' not found for o-loading";
-		}
+@mixin _oLoadingColor($theme) {
+	$color: _oLoadingGet('default-color', $from: $theme);
+	@if(not $color) {
+		@error 'No color found for o-loading theme "#{$theme}".';
 	}
 
 	border-style: solid;
@@ -53,7 +50,7 @@
 /// @access private
 @mixin _oLoadingSize($name) {
 	@if type-of($name) == 'string' {
-		$name: map-get($o-loading-sizes, $name);
+		$name: map-get($_o-loading-sizes, $name);
 
 		@if not $name {
 			@warn "Size: '#{$name}' not found for o-loading";

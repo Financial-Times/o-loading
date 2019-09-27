@@ -24,19 +24,18 @@
 
 	@each $theme in $themes {
 		.o-loading--#{$theme} {
-			@include _oLoadingColor(map-get($o-loading-themes, $theme));
+			@include _oLoadingColor($theme);
 		}
 	}
 
 	@each $size in $sizes {
 		.o-loading--#{$size} {
-			@include _oLoadingSize(map-get($o-loading-sizes, $size));
+			@include _oLoadingSize(map-get($_o-loading-sizes, $size));
 		}
 	}
 }
 
 @if $o-loading-is-silent == false {
-
 	@include oLoading();
 
 	$o-loading-is-silent: true !global;
