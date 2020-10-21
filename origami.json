@@ -3,7 +3,7 @@
 	"keywords": [ "loading", "spinner", "wait", "loader" ],
 	"origamiType": "module",
 	"origamiCategory": "primitives",
-	"origamiVersion": 1,
+	"origamiVersion": 2,
 	"brands": [
 		"master",
 		"internal",
