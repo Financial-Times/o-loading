@@ -11,12 +11,12 @@
     },
     "browser": "main.js",
     "peerDependencies": {
-        "@financial-times/o-brand": "^100.0.0-6",
-        "@financial-times/o-colors": "^100.0.0-6"
+        "@financial-times/o-brand": "^100.0.0-7",
+        "@financial-times/o-colors": "^100.0.0-7"
     },
     "description": "A visual loading indicator, available in two colours and four sizes",
     "publishConfig": {
         "registry": "http://localhost:4873"
     },
-    "version": "100.0.0-6"
+    "version": "100.0.0-7"
 }
