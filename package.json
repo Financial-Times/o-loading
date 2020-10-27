@@ -1,30 +1,41 @@
 {
-    "name": "@financial-times/o-loading",
-    "version": "100.0.0-8",
-    "description": "A visual loading indicator, available in two colours and four sizes",
-    "license": "MIT",
-    "type": "module",
-    "exports": {
-        ".": {
-            "browser": "./main.js"
-        }
-    },
-    "browser": "./main.js",
-    "types": "types",
-    "devDependencies": {
-        "eslint": "^7.9.0",
-        "eslint-config-origami-component": "^2.1.0",
-        "origami-ci-tools": "^2.1.0",
-        "remark": "^12.0.1",
-        "remark-lint": "^7.0.1",
-        "remark-preset-lint-origami-component": "^1.2.0",
-        "stylelint": "^13.7.1"
-    },
-    "peerDependencies": {
-        "@financial-times/o-brand": "^100.0.0-9",
-        "@financial-times/o-colors": "^100.0.0-9"
-    },
-    "publishConfig": {
-        "registry": "https://origami-npm-registry-prototype.herokuapp.com"
+  "name": "@financial-times/o-loading",
+  "version": "100.0.0-10",
+  "description": "A visual loading indicator, available in two colours and four sizes",
+  "keywords": [],
+  "homepage": "https://github.com/Financial-Times/o-loading#readme",
+  "bugs": {
+    "url": "https://github.com/Financial-Times/o-loading/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Financial-Times/o-loading.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "exports": {
+    ".": {
+      "browser": "./main.js"
     }
+  },
+
+  "browser": "./main.js",
+  "types": "types",
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-config-origami-component": "^2.1.0",
+    "origami-ci-tools": "^2.1.0",
+    "remark": "^12.0.1",
+    "remark-lint": "^7.0.1",
+    "remark-preset-lint-origami-component": "^1.2.0",
+    "stylelint": "^13.7.1"
+  },
+  "peerDependencies": {
+    "@financial-times/o-brand": "^100.0.0-10",
+    "@financial-times/o-colors": "^100.0.0-10"
+  },
+  "publishConfig": {
+    "registry": "https://origami-npm-registry-prototype.herokuapp.com"
+  }
 }
