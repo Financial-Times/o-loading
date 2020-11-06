@@ -1,6 +1,6 @@
 {
   "name": "@financial-times/o-loading",
-  "version": "100.0.0-12",
+  "version": "100.0.0-13",
   "description": "A visual loading indicator, available in two colours and four sizes",
   "keywords": [],
   "homepage": "https://github.com/Financial-Times/o-loading#readme",
@@ -32,8 +32,8 @@
     "typescript": "^4.0.5"
   },
   "peerDependencies": {
-    "@financial-times/o-brand": "^100.0.0-12",
-    "@financial-times/o-colors": "^100.0.0-12"
+    "@financial-times/o-brand": "^100.0.0-13",
+    "@financial-times/o-colors": "^100.0.0-13"
   },
   "publishConfig": {
     "registry": "https://origami-npm-registry-prototype.herokuapp.com"
