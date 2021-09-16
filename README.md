@@ -1,5 +1,11 @@
 # o-loading [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](#licence)
 
+***
+
+**This component has moved to the [Origami Component System](https://github.com/Financial-Times/origami).**
+
+***
+
 This is an [Origami](http://origami.ft.com/) component that provides a visual loading indicator.
 
 - [Usage](#usage)
